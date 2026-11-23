@@ -18,8 +18,8 @@ em{font-style:italic;color:var(--fox-d)}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:18px;padding:15px 28px;font:800 16px 'Nunito',sans-serif;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;cursor:pointer;background:var(--leaf);color:#fff;box-shadow:0 5px 0 var(--leaf-d);transition:transform .08s,box-shadow .08s}
 .btn:hover{filter:brightness(1.05)}
 .btn:active{transform:translateY(4px);box-shadow:0 1px 0 var(--leaf-d)}
-.btn.fox{background:var(--fox);box-shadow:0 5px 0 var(--fox-d)}
-.btn.fox:active{box-shadow:0 1px 0 var(--fox-d)}
+.btn.orange{background:var(--fox);box-shadow:0 5px 0 var(--fox-d)}
+.btn.orange:active{box-shadow:0 1px 0 var(--fox-d)}
 .btn.line{background:#fff;color:var(--sky-d);box-shadow:0 5px 0 var(--line),inset 0 0 0 2px var(--line)}
 .btn.line:active{box-shadow:0 1px 0 var(--line),inset 0 0 0 2px var(--line)}
 .btn.sm{padding:11px 20px;font-size:14px;border-radius:14px;box-shadow:0 4px 0 var(--leaf-d)}
@@ -64,6 +64,23 @@ em{font-style:italic;color:var(--fox-d)}
 .bub.two{right:5%;bottom:14%;background:var(--sun);transform:rotate(2deg);font-size:16px}
 .bub.two:after{background:var(--sun);top:-7px;right:38px}
 .pop{position:absolute;z-index:3;right:8%;top:13%;background:#fff;border-radius:16px;padding:8px 14px;font-weight:800;font-size:15px;color:var(--fox-d);box-shadow:0 4px 0 rgba(58,36,24,.12);transform:rotate(4deg)}
+/* centered sky hero */
+.hero.ct{padding:64px 0 0;background:linear-gradient(180deg,#FFF8EE 0,#EAF6FF 40%,#BFE6FF 100%)}
+.hero.ct .wrap{display:block;text-align:center}
+.hero.ct h1{max-width:13em;margin:0 auto}
+.hero.ct p.lead{margin:20px auto 26px}
+.hero.ct .cta,.hero.ct .chips{justify-content:center}
+.hero.ct .langs{margin-top:26px}
+.ct-scene{position:relative;min-height:380px;display:grid;place-items:end center}
+.ct-scene:before{content:"";position:absolute;left:-10%;right:-10%;bottom:0;height:150px;background:var(--leaf-s);border-radius:50% 50% 0 0/100% 100% 0 0;z-index:1}
+.ct-scene .fox{width:min(300px,70%);margin-bottom:40px;z-index:2}
+.ct-scene .bub{z-index:3}
+.ct-scene .bub.one{left:max(2%,calc(50% - 440px));top:16%}
+.ct-scene .bub.two{right:max(2%,calc(50% - 440px));bottom:26%;top:auto}
+.ct-scene .pop{right:max(8%,calc(50% - 300px));top:6%}
+.cl{position:absolute;height:34px;width:120px;background:#fff;border-radius:99px;opacity:.85}
+.cl.a{left:6%;top:6%}.cl.b{right:4%;top:36%;width:90px}
+@media (max-width:900px){.ct-scene .bub.one{left:2%;top:10%}.ct-scene .bub.two{right:2%}.ct-scene{min-height:360px}}
 /* sections */
 section{padding:96px 0}
 section.alt{background:var(--cream2)}
@@ -217,16 +234,14 @@ footer nav a:hover{color:#fff}
 </div></header>
 
 <main id="top">
-<section class="hero" style="padding-bottom:90px"><div class="wrap">
- <div>
-  <div class="eyebrow">Language learning, but fun</div>
-  <h1>Learn a language in <em>five minutes</em> a day.</h1>
-  <p class="lead">Short lessons, a very patient fox, and a streak you will actually want to keep. Pick a language and say your first word today.</p>
-  <div class="cta"><a class="btn" href="#join">Start learning</a><a class="btn line" href="#try">Try a lesson</a></div>
-  <div class="langs"><small>Remy says hello in</small>
-   <div class="chips" id="chips" role="group" aria-label="Pick a greeting language"></div></div>
- </div>
- <div class="stage" aria-label="Remy the fox">
+<section class="hero ct"><div class="wrap">
+ <div class="eyebrow">Language learning, but fun</div>
+ <h1>Learn a language in <em>five minutes</em> a day.</h1>
+ <p class="lead">Short lessons, a very patient fox, and a streak you will actually want to keep. Pick a language and say your first word today.</p>
+ <div class="cta"><a class="btn" href="#join">Start learning</a><a class="btn line" href="#try">Try a lesson</a></div>
+ <div class="langs"><small>Remy says hello in</small><div class="chips" id="chips" role="group" aria-label="Pick a greeting language"></div></div>
+ <div class="ct-scene" aria-label="Remy the fox">
+  <i class="cl a"></i><i class="cl b"></i>
   <div class="bub one" id="hello" aria-live="polite">Hola!</div>
   <div class="pop">+10 XP</div>
   <div class="fox" id="heroFox" role="img" aria-label="Remy, a friendly orange fox in a green scarf"></div>
@@ -303,7 +318,7 @@ footer nav a:hover{color:#fff}
   <div class="plan"><h3>Tailtalk Free</h3><div class="price">$0 <small>forever</small></div>
    <ul><li>All six languages</li><li>Daily lessons</li><li>Streaks and XP</li></ul><a class="btn line" href="#join">Start free</a></div>
   <div class="plan pro"><span class="tag">Most loved</span><h3>Tailtalk Plus</h3><div class="price">$7 <small>per month</small></div>
-   <ul><li>No ads</li><li>Unlimited hearts</li><li>Offline lessons</li><li>Speaking practice with Remy</li></ul><a class="btn fox" href="#join">Try Plus free</a></div>
+   <ul><li>No ads</li><li>Unlimited hearts</li><li>Offline lessons</li><li>Speaking practice with Remy</li></ul><a class="btn orange" href="#join">Try Plus free</a></div>
  </div>
 </div></section>
 
@@ -328,7 +343,7 @@ footer nav a:hover{color:#fff}
   <label for="em">Email</label><input id="em" type="email" placeholder="you@email.com" autocomplete="email" required>
   <label for="lg">I want to learn</label>
   <select id="lg"><option>Spanish</option><option>French</option><option>Italian</option><option>German</option><option>Japanese</option><option>Portuguese</option></select>
-  <button class="btn fox" type="submit">Start learning</button>
+  <button class="btn orange" type="submit">Start learning</button>
   <div id="err" style="color:#FFB4B4;font-weight:800;min-height:1.2em" role="alert"></div>
   <div class="ok" id="ok"><div class="foxsmall" id="okFox"></div><h3>Welcome in!</h3><p style="color:#D9C6D3">Remy is warming up. Your first lesson is on the way.</p></div>
  </form>
